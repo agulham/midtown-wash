@@ -2,3 +2,7 @@
 *.log
 /screenshot_*.png
 /shot_*.png
+
+.env
+.env.local
+secrets.local
