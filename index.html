@@ -10,6 +10,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,500,400&f[]=general-sans@400,500,600&display=swap">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -37,18 +45,23 @@
   <div class="container hero-grid">
     <div>
       <div class="hero-kicker"><span class="dot"></span>1906 16th St · Sacramento, CA</div>
-      <h1>Your car,<br><span class="chrome-text">re-engineered</span><br>clean.</h1>
-      <p class="lede">Hand wash, full interior detailing, paint correction, and ceramic coating — run with the precision of a shop that treats every panel like it matters. Same block as Midtown Smog.</p>
+      <h1>Detailing,<br><span class="chrome-text">reengineered.</span></h1>
+      <p class="lede">Hand wash, full interior detailing, paint correction, and ceramic coating — delivered with the precision of a shop that treats every panel like it matters. Right next to Midtown Smog on 16th St.</p>
       <div class="hero-actions">
         <a href="contact.html" class="btn btn-signal">Book Your Slot</a>
         <a href="tel:19168224864" class="btn btn-outline">(916) 822-4864</a>
       </div>
     </div>
-    <div class="card-stage">
-      <div class="card-3d">
-        <img src="assets/brand/membership-card.png" alt="Midtown Wash membership card">
-      </div>
+    <div class="carwash-stage">
+      <img class="carwash-fallback" src="assets/images/hero-exterior-wash.png" alt="Car being washed at Midtown Wash">
     </div>
+  </div>
+</section>
+
+<section class="flex-band">
+  <div class="container">
+    <div class="flex-number" data-count-to="1000" data-count-suffix="+">0</div>
+    <p class="flex-label">Cars hand-washed and detailed at 1906 16th St since we opened.</p>
   </div>
 </section>
 
@@ -87,6 +100,22 @@
         <p>Decontamination, polish, and a professional-grade coating that beads water for years.</p>
         <div class="service-price">$450<span> /car</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" style="background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container split">
+    <div class="card-stage">
+      <div class="card-3d">
+        <img src="assets/brand/membership-card.png" alt="Midtown Wash membership card">
+      </div>
+    </div>
+    <div>
+      <div class="hero-kicker"><span class="dot"></span>Membership</div>
+      <h2>Own the card.<br>Skip the line.</h2>
+      <p class="lede">Members get priority scheduling, a free check-up wash every 6 months with any ceramic package, and first call on new slots before they go public.</p>
+      <a href="contact.html" class="btn btn-signal" style="margin-top:28px;display:inline-flex;">Ask About Membership</a>
     </div>
   </div>
 </section>
@@ -188,5 +217,7 @@
 </div>
 
 <script src="js/main.js"></script>
+<script type="module" src="js/hero-carwash.js"></script>
+<script type="module" src="js/hero-glass.js"></script>
 </body>
 </html>

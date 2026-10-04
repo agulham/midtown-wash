@@ -54,10 +54,10 @@ section{padding:120px 0;position:relative;}
 h1,h2,h3,h4{
   font-family:var(--font-display);
   font-weight:600;
-  letter-spacing:-0.01em;
-  line-height:1.02;
+  letter-spacing:-0.005em;
+  line-height:1.04;
 }
-h1{font-size:clamp(3rem,7vw,6.4rem);font-weight:600;}
+h1{font-size:clamp(3rem,6.5vw,6rem);font-weight:600;letter-spacing:-0.015em;}
 h2{font-size:clamp(2.2rem,4vw,3.6rem);}
 h3{font-size:1.4rem;font-weight:600;}
 
@@ -123,11 +123,18 @@ header{
   .nav-links.open{display:flex;}
   .nav-toggle{display:block;}
   .nav-phone{display:none;}
+  .brand{font-size:1rem;white-space:nowrap;}
+  .nav-cta .btn-signal{padding:12px 20px;font-size:.85rem;white-space:nowrap;}
+}
+@media (max-width:420px){
+  .brand{font-size:.92rem;gap:7px;}
+  .brand img{height:24px;}
+  .nav-cta .btn-signal{padding:10px 16px;font-size:.8rem;}
 }
 
 /* Hero — asymmetric, left-aligned, full-bleed mesh */
 .hero{
-  position:relative;padding:180px 0 140px;overflow:hidden;
+  position:relative;padding:128px 0 120px;overflow:hidden;
 }
 @media (max-width:760px){.hero{padding:120px 0 72px;}}
 .hero::before{
@@ -147,14 +154,15 @@ header{
 
 /* Spinning 3D membership card — real perspective transform, not a static image */
 .card-stage{
-  position:relative;perspective:1600px;aspect-ratio:4/5;
+  position:relative;perspective:1600px;aspect-ratio:3/2;
   display:flex;align-items:center;justify-content:center;
+  padding:40px;
 }
 .card-stage::before{
   /* floating glass orb cluster drifting behind the card */
-  content:"";position:absolute;inset:-10%;
-  background:url('../assets/brand/glass-orbs.png') center/65% no-repeat;
-  opacity:.5;filter:blur(.3px);
+  content:"";position:absolute;inset:-25%;
+  background:url('../assets/brand/glass-orbs.png') center/90% no-repeat;
+  opacity:.4;filter:blur(.3px);
   animation:orbFloat 9s ease-in-out infinite;
   pointer-events:none;z-index:0;
 }
@@ -163,7 +171,7 @@ header{
   50%{transform:translate(-14px,18px) scale(1.04);}
 }
 .card-3d{
-  width:78%;border-radius:20px;
+  width:100%;border-radius:20px;
   transform-style:preserve-3d;
   animation:cardSpin 14s linear infinite;
   box-shadow:0 40px 90px -30px rgba(26,78,197,.45);
@@ -174,6 +182,14 @@ header{
   0%{transform:rotateY(0deg) rotateX(6deg);}
   100%{transform:rotateY(360deg) rotateX(6deg);}
 }
+
+/* Hero car-wash loop — procedural Three.js scene, no static fallback image shown once WebGL mounts */
+.carwash-stage{
+  position:relative;aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--line-strong);background:var(--panel);
+}
+.carwash-fallback{width:100%;height:100%;object-fit:cover;}
+@media (max-width:980px){.carwash-stage{aspect-ratio:1/1;}}
 @media (prefers-reduced-motion: reduce){
   .card-3d{animation:none;transform:rotateY(-18deg) rotateX(6deg);}
   .card-stage::before{animation:none;}
@@ -182,7 +198,7 @@ header{
   position:absolute;bottom:0;left:0;right:0;text-align:center;
   font-size:.78rem;color:var(--bone-dim);z-index:2;padding-bottom:4px;
 }
-@media (max-width:980px){.card-3d{width:60%;}}
+@media (max-width:980px){.card-stage{padding:24px;}}
 
 /* Horizontal scroll-snap service strip */
 .strip-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:24px;flex-wrap:wrap;}
@@ -345,3 +361,67 @@ footer{padding:80px 0 36px;border-top:1px solid var(--line);}
 
 .divider{height:1px;background:var(--line);}
 .section-tight{padding:72px 0;}
+
+/* ============================================================
+   REVEAL-ON-SCROLL — elements rise through a mask line rather
+   than just fading. One deliberate motion treatment, reused
+   everywhere, not scattered one-off effects.
+   ============================================================ */
+.reveal-pre{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .7s cubic-bezier(.16,.8,.3,1), transform .7s cubic-bezier(.16,.8,.3,1);
+}
+.reveal-in{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ============================================================
+   FLEX BAND — one oversized typographic beat, full-bleed,
+   between the hero and the lineup. This is the "spend your
+   boldness in one place" moment: everything else on the page
+   stays quiet so this lands.
+   ============================================================ */
+.flex-band{
+  padding:40px 0 60px;
+  overflow:hidden;
+}
+.flex-band .container{
+  display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:24px;
+}
+.flex-number{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(5rem,16vw,13rem);
+  line-height:0.85;
+  letter-spacing:-0.02em;
+  background:var(--chrome);
+  background-size:200% 200%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:chromeSweep 8s ease infinite;
+}
+.flex-label{
+  color:var(--bone-dim);
+  font-size:.95rem;
+  max-width:260px;
+  text-align:right;
+  line-height:1.5;
+}
+@media (max-width:760px){
+  .flex-band .container{flex-direction:column;align-items:flex-start;gap:8px;}
+  .flex-label{text-align:left;}
+}
+
+/* Hover micro-interactions — subtle, physical, never a hard snap */
+.service-card, .bento-cell, .quote-card{
+  transition:transform .25s cubic-bezier(.2,.8,.2,1), border-color .25s ease, box-shadow .25s ease;
+}
+.service-card:hover, .bento-cell:hover{
+  transform:translateY(-6px);
+  border-color:var(--line-strong);
+  box-shadow:0 24px 50px -24px rgba(26,78,197,.35);
+}
+.btn{will-change:transform;}
+.g-item img{transition:transform .5s cubic-bezier(.2,.8,.2,1);}
+.g-item:hover img{transform:scale(1.05);}
