@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Midtown Wash</title>
 <meta name="description" content="Midtown Wash is a family-run car wash and detail studio at 1906 16th St, Sacramento, operating alongside Midtown Smog.">
-<link rel="icon" href="assets/brand/glass-emblem.png">
-<link rel="stylesheet" href="css/styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,500,400&f[]=general-sans@400,500,600&display=swap">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
 <header>
   <nav class="nav">
-    <a href="index.html" class="brand"><img src="assets/brand/glass-emblem.png" alt="Midtown Wash">Midtown Wash</a>
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#2f5fd8"/><path d="M8 20c1.5-6 4-11 8-11s6.5 5 8 11" stroke="#f4f2ed" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="21.5" r="2.2" fill="#f4f2ed"/></svg>
+      Midtown Wash
+    </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
@@ -36,7 +36,7 @@
 <section class="page-header">
   <div class="container">
     <div class="breadcrumb">Home / About</div>
-    <h1>Family-run.<br>Midtown-built.</h1>
+    <h1 data-lines>Family-run.<br>Midtown-built.</h1>
     <p class="lede">Midtown Wash sits right alongside Midtown Smog at 1906 16th St — same block, same standard of care.</p>
   </div>
 </section>
@@ -58,15 +58,15 @@
     <div class="bento">
       <div class="bento-cell span-2">
         <div class="bento-label">No upsells</div>
-        <p style="color:var(--bone-dim);font-size:.92rem;margin-top:6px;">What we quote is what you pay. If your car needs more, we tell you before — not after.</p>
+        <p style="color:var(--paper-ink-dim);font-size:.92rem;margin-top:6px;">What we quote is what you pay. If your car needs more, we tell you before — not after.</p>
       </div>
       <div class="bento-cell span-2">
         <div class="bento-label">No automated brushes</div>
-        <p style="color:var(--bone-dim);font-size:.92rem;margin-top:6px;">Every wash is hand-done. Machines swirl paint — hands and the right products don't.</p>
+        <p style="color:var(--paper-ink-dim);font-size:.92rem;margin-top:6px;">Every wash is hand-done. Machines swirl paint — hands and the right products don't.</p>
       </div>
       <div class="bento-cell span-2">
         <div class="bento-label">No second stop</div>
-        <p style="color:var(--bone-dim);font-size:.92rem;margin-top:6px;">1906 16th St covers your smog check and your car wash in one trip.</p>
+        <p style="color:var(--paper-ink-dim);font-size:.92rem;margin-top:6px;">1906 16th St covers your smog check and your car wash in one trip.</p>
       </div>
     </div>
   </div>
@@ -91,7 +91,10 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="footer-brand"><img src="assets/brand/glass-emblem.png" alt="">Midtown Wash</a>
+        <a href="index.html" class="footer-brand">
+          <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#2f5fd8"/><path d="M8 20c1.5-6 4-11 8-11s6.5 5 8 11" stroke="#f4f2ed" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="21.5" r="2.2" fill="#f4f2ed"/></svg>
+          Midtown Wash
+        </a>
         <p>Midtown Sacramento's car wash &amp; detailing studio, right alongside Midtown Smog.</p>
       </div>
       <div>
@@ -133,6 +136,7 @@
   <a href="tel:19168224864">Call Now — (916) 822-4864</a>
 </div>
 
+<script src="js/motion.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
