@@ -217,6 +217,8 @@ h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
 }
 .cta-band h2 { color: var(--bone); }
 .cta-band p { color: var(--ink-dim); margin-top: 6px; }
+.cta-band .btn-outline { border-color: var(--line-dark); color: var(--bone); }
+.cta-band .btn-outline:hover { border-color: var(--bone); }
 
 /* ---------- Footer ---------- */
 footer { background: var(--ink); color: var(--bone); padding: var(--space-6) 0 var(--space-4); }
@@ -266,6 +268,8 @@ footer ul li a:hover { color: var(--bone); }
 .bento-label { font-size: 0.85rem; font-weight: 600; color: var(--paper-ink-dim); margin-bottom: var(--space-2); }
 .bento-value { font-size: 2.1rem; font-weight: 700; }
 .bento-value span { font-size: 1rem; font-weight: 500; color: var(--paper-ink-dim); }
+.bento-cell.highlight .bento-value span { color: var(--ink-dim); }
+.bento-cell.highlight .bento-label { color: var(--ink-dim); }
 .bento-cell ul { margin-top: var(--space-3); display: flex; flex-direction: column; gap: 8px; }
 .bento-cell ul li { font-size: 0.9rem; padding-left: 16px; position: relative; }
 .bento-cell ul li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
