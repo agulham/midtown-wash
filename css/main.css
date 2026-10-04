@@ -135,9 +135,7 @@ h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
 /* ---------- Hero: full-bleed video ---------- */
 .hero-video {
   position: relative;
-  height: 92vh;
-  min-height: 560px;
-  max-height: 980px;
+  height: clamp(560px, max(92vh, 56vw), 980px);
   padding: 0;
   overflow: hidden;
   background: #060608;
@@ -149,8 +147,9 @@ h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  object-fit: contain;
+  object-position: center 35%;
+  background: #060608;
 }
 .hero-video-scrim {
   position: absolute;
@@ -192,7 +191,7 @@ h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
 .btn-outline-dark:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
 
 @media (max-width: 860px) {
-  .hero-video { height: 100vh; min-height: 620px; }
+  .hero-video { height: clamp(520px, 86vh, 700px); }
   .hero-logo { width: clamp(170px, 46vw, 240px); margin-bottom: var(--space-3); }
   .hero-video-headline { font-size: clamp(2.1rem, 9vw, 3rem); max-width: 100%; }
   .hero-video-lede { font-size: 1rem; max-width: 100%; }
