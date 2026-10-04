@@ -1,22 +1,46 @@
-/* MIDTOWN WASH — Design tokens v3
-   Near-black + warm paper + Midtown Smog blue. One accent, used deliberately.
-   No glass / chrome / holographic effects. */
+/* MIDTOWN WASH — Design tokens v4
+   "Frutiger Aero / Liquid Glass": deep near-black ink, cool blue accent,
+   frosted glass material, Bodoni Moda display + Inter body. */
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --ink: #0a0b0d;
-  --ink-raised: #14161a;
-  --paper: #f4f2ed;
-  --paper-dim: #e8e5dc;
-  --accent: #2f5fd8;
-  --accent-dim: #1f3f94;
-  --bone: #ededE8;
-  --ink-dim: rgba(237, 237, 232, 0.55);
-  --paper-ink: #16181c;
-  --paper-ink-dim: rgba(22, 24, 28, 0.6);
-  --line-dark: rgba(237, 237, 232, 0.12);
-  --line-light: rgba(22, 24, 28, 0.12);
+  color-scheme: dark;
 
-  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* ---------- base surfaces ---------- */
+  --ink: #050608;            /* deepest background */
+  --ink-raised: #0f1217;     /* raised dark panel (nav, footer, cta) */
+  --paper: #0a0c10;          /* main body background (dark, not literal paper) */
+  --paper-dim: #11141a;      /* slightly lighter dark surface, used under glass */
+
+  /* ---------- accent ---------- */
+  --accent: #4f8dff;
+  --accent-light: #9cc2ff;
+  --accent-dim: #2c4f8f;
+
+  /* ---------- text ---------- */
+  --bone: #f2f4f8;
+  --ink-dim: rgba(242, 244, 248, 0.6);
+  --paper-ink: #f2f4f8;
+  --paper-ink-dim: rgba(242, 244, 248, 0.64);
+  --line-dark: rgba(242, 244, 248, 0.14);
+  --line-light: rgba(242, 244, 248, 0.12);
+
+  /* ---------- fonts ---------- */
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Bodoni Moda", "Didot", Georgia, serif;
+
+  /* ---------- liquid glass material tokens ---------- */
+  --glass-tint: 150 190 255;
+  --glass-tint-opacity: 0.08;
+  --glass-fill: rgb(var(--glass-tint) / var(--glass-tint-opacity));
+  --glass-border: rgb(190 215 255 / 0.22);
+  --glass-highlight: rgb(225 238 255 / 0.5);
+  --glass-inner-shadow: rgb(0 0 0 / 0.35);
+  --glass-shadow: 0 16px 48px rgb(0 4 16 / 0.55);
+  --glass-blur: 18px;
+  --glass-saturate: 150%;
+  --glass-radius: 18px;
 
   --space-1: 8px;
   --space-2: 13px;
@@ -28,7 +52,7 @@
   --space-8: 140px;
 
   --radius-sharp: 0px;
-  --radius-tag: 3px;
-  --radius-card: 10px;
+  --radius-tag: 6px;
+  --radius-card: 18px;
   --radius-pill: 58px;
 }
