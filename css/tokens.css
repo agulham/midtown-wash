@@ -3,7 +3,7 @@
    (matches the original "liquid glass / Frutiger Aero" reference look —
    bold uppercase Space Grotesk headings over Inter body, not a serif). */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
   color-scheme: dark;
@@ -29,7 +29,7 @@
 
   /* ---------- fonts ---------- */
   --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Abel", "Helvetica Neue", Arial, sans-serif;
 
   /* ---------- liquid glass material tokens ---------- */
   --glass-tint: 60 90 150;
