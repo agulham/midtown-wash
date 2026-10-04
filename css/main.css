@@ -82,6 +82,14 @@ header {
   margin-right: auto;
 }
 .brand svg { width: 28px; height: 28px; flex-shrink: 0; }
+.brand-sub {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78em;
+  margin-left: 6px;
+}
 .nav-links { display: flex; align-items: center; gap: var(--space-4); }
 .nav-links a {
   color: var(--ink-dim);
@@ -123,6 +131,74 @@ header {
 h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: var(--space-4); }
 .hero-image { border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--line-light); }
+
+/* ---------- Hero: full-bleed video ---------- */
+.hero-video {
+  position: relative;
+  height: 92vh;
+  min-height: 560px;
+  max-height: 980px;
+  padding: 0;
+  overflow: hidden;
+  background: #060608;
+  display: flex;
+  align-items: center;
+}
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.hero-video-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(4,4,6,0.78) 0%, rgba(4,4,6,0.32) 32%, rgba(4,4,6,0.38) 68%, rgba(4,4,6,0.92) 100%);
+}
+.hero-video-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+.hero-logo {
+  width: clamp(220px, 26vw, 340px);
+  height: auto;
+  margin-bottom: var(--space-4);
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.5));
+}
+.hero-video-headline {
+  color: #fff;
+  font-size: clamp(2.6rem, 6.4vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  text-shadow: 0 2px 28px rgba(0,0,0,0.55);
+  max-width: 14ch;
+}
+.hero-video-lede {
+  color: rgba(255,255,255,0.82);
+  margin-top: var(--space-3);
+  max-width: 50ch;
+  font-size: 1.1rem;
+}
+.btn-outline-dark { border-color: rgba(255,255,255,0.4); color: #fff; }
+.btn-outline-dark:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+@media (max-width: 860px) {
+  .hero-video { height: 100vh; min-height: 620px; }
+  .hero-logo { width: clamp(170px, 46vw, 240px); margin-bottom: var(--space-3); }
+  .hero-video-headline { font-size: clamp(2.1rem, 9vw, 3rem); max-width: 100%; }
+  .hero-video-lede { font-size: 1rem; max-width: 100%; }
+  .hero-actions { width: 100%; }
+  .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
+}
 
 /* ---------- Flex / stat band ---------- */
 .flex-band {
